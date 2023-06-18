@@ -24,6 +24,6 @@ public class MainGameStatesGameInit : MainGameState
         //base.Update();
         Debug.Log("MainGameStatesGameInit Update");
         // ƒQ[ƒ€‚Ì‰Šú‰»‚ªŠ®—¹‚µ‚½‚çAStart‚É‘JˆÚ
-        stateMachine.ChangeState(new MainGameStatesGameStart(stateMachine));
+        stateMachine.ChangeState(MainGameStateManager.Instance.MainGameStatesGameStart);
     }
 }
