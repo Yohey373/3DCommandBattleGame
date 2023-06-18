@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class MainGameStatesGameStart : MainGameState
 {
@@ -14,6 +15,15 @@ public class MainGameStatesGameStart : MainGameState
     public override void Enter()
     {
         Debug.Log("MainGameStatesGameStart Enter");
+
+        for (int i = 0; i < GameCharacterDataProvider.Instance.PlayerCharacterControllers.Count(); i++)
+        {
+            // UIイニシャライズをする
+            characterUIRoots[i].CharacterUIInitialize(GameCharacterDataProvider.Instance.PlayerCharacterControllers[i].GetCharacterData);
+
+            GameCharacterDataProvider.Instance.PlayerCharacterControllers[i].CharacterInstantiate();
+        }
+
     }
 
     public override void Exit()

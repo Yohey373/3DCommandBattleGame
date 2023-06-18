@@ -15,6 +15,8 @@ public class MainGameCharacterController : MonoBehaviour
     public MainGameUIButtonsManager.ButtonAction secondaryButtonAction;
     public MainGameUIButtonsManager.ButtonAction tertiaryButtonAction;
 
+    public bool IsActionChoiced = false;
+
     // メインゲームで使うキャラクターデータ
     private CharacterData gameCharacterData;
 
@@ -32,35 +34,39 @@ public class MainGameCharacterController : MonoBehaviour
     {
         if (characterData != null)
         {
-            gameCharacterData =
-                ScriptableObject.CreateInstance<CharacterData>();
+            gameCharacterData = ScriptableObject.CreateInstance<CharacterData>();
 
             gameCharacterData.Initialize(characterData);
 
-            var characterPrefab = Instantiate(gameCharacterData.CharacterPrefab, this.transform);
-
-            gameCharacterAnimator = characterPrefab.GetComponentInChildren<Animator>();
-            
-            characterUIRoot.CharacterUIInitialize(gameCharacterData);
-            primaryButtonAction = new MainGameUIButtonsManager.ButtonAction("Attack", ()=>SetAnimation(0));
         }
+    }
+
+    public void CharacterInstantiate()
+    {
+        var characterPrefab = Instantiate(gameCharacterData.CharacterPrefab, this.transform);
+        gameCharacterAnimator = characterPrefab.GetComponentInChildren<Animator>();
+        primaryButtonAction = new MainGameUIButtonsManager.ButtonAction("Attack", ()=>SetAnimation(0));
     }
 
     public void SetAnimation(int actionType)
     {
+        IsActionChoiced = true;
         StartCoroutine(SetActionAnimation(actionType));
     }
 
     public IEnumerator SetActionAnimation(int actionType)
     {
         gameCharacterAnimator.SetInteger(AnimationActionType, actionType);
+
         yield return new WaitWhile(
             () => gameCharacterAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f);
 
-        yield return new WaitUntil(
-            () => gameCharacterAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime <= 1.0f);
-
         gameCharacterAnimator.SetInteger(AnimationActionType, -1);
+
+        yield return new WaitUntil(
+            () => !gameCharacterAnimator.GetCurrentAnimatorStateInfo(0).IsName("Idle"));
+
+        IsActionChoiced = false;
     }
 
 }

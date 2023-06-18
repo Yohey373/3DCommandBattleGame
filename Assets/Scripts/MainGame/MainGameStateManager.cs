@@ -22,6 +22,12 @@ public class MainGameStateManager : SingletonMonoBehaviour<MainGameStateManager>
     
     // MainGameの部分
     public MainGameStatesGameMain MainGameStatesGameMain;
+
+    public MainGameStatePlayerWaitTurn MainGameStatesPlayerWaitTurn;
+    public MainGameStatePlayerChoiseTurn MainGameStatesPlayerChoiseTurn;
+    public MainGameStatePlayerAttackTurn MainGameStatesPlayerAttackTurn;
+
+
     // ゲームリザルト
     public MainGameStatesGameResult MainGameStatesGameResult;
 
@@ -36,6 +42,11 @@ public class MainGameStateManager : SingletonMonoBehaviour<MainGameStateManager>
         MainGameStatesGameInit = new MainGameStatesGameInit(stateMachine);
         MainGameStatesGameStart = new MainGameStatesGameStart(stateMachine, CharacterUIRoots);
         MainGameStatesGameMain = new MainGameStatesGameMain(stateMachine);
+
+        MainGameStatesPlayerWaitTurn = new MainGameStatePlayerWaitTurn(stateMachine, CharacterUIRoots);
+        MainGameStatesPlayerChoiseTurn = new MainGameStatePlayerChoiseTurn(stateMachine);
+        MainGameStatesPlayerAttackTurn = new MainGameStatePlayerAttackTurn(stateMachine);
+
         MainGameStatesGameResult = new MainGameStatesGameResult(stateMachine);
 
         // Initからスタートする
