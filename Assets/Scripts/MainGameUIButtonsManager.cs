@@ -43,8 +43,8 @@ public class MainGameUIButtonsManager : MonoBehaviour
 
     public void SetButtonActions(
         ButtonAction primaryAction,
-        ButtonAction secondaryAction,
-        ButtonAction tertiaryAction)
+        ButtonAction secondaryAction = null,
+        ButtonAction tertiaryAction = null)
     {
         // すべてのボタンのアクションをリセットする
         primaryButton.onClick.RemoveAllListeners();

@@ -8,6 +8,10 @@ public class MainGameCharacterController : MonoBehaviour
     [SerializeField]
     private CharacterData characterData;
 
+    public MainGameUIButtonsManager.ButtonAction primaryButtonAction;
+    public MainGameUIButtonsManager.ButtonAction secondaryButtonAction;
+    public MainGameUIButtonsManager.ButtonAction tertiaryButtonAction;
+
     // メインゲームで使うキャラクターデータ
     private CharacterData gameCharacterData;
 

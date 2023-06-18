@@ -27,7 +27,7 @@ public class CharacterUIRoot : MonoBehaviour
 
     private CharacterData characterUIData;
 
-    private CharacterData GetCharacterUIData
+    public CharacterData GetCharacterUIData
     {
         get { return characterUIData; }
     }
