@@ -8,6 +8,9 @@ public class MainGameCharacterController : MonoBehaviour
     [SerializeField]
     private CharacterData characterData;
 
+    [SerializeField]
+    private CharacterUIRoot characterUIRoot;
+
     public MainGameUIButtonsManager.ButtonAction primaryButtonAction;
     public MainGameUIButtonsManager.ButtonAction secondaryButtonAction;
     public MainGameUIButtonsManager.ButtonAction tertiaryButtonAction;
@@ -37,6 +40,9 @@ public class MainGameCharacterController : MonoBehaviour
             var characterPrefab = Instantiate(gameCharacterData.CharacterPrefab, this.transform);
 
             gameCharacterAnimator = characterPrefab.GetComponentInChildren<Animator>();
+            
+            characterUIRoot.CharacterUIInitialize(gameCharacterData);
+            primaryButtonAction = new MainGameUIButtonsManager.ButtonAction("Attack", ()=>SetAnimation(0));
         }
     }
 
