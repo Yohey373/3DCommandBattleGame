@@ -11,12 +11,12 @@ public class MainGameStatePlayerAttackTurn : MainGameStatesGameMain
 
     public override void Enter()
     {
-        base.Enter();
+        //base.Enter();
     }
 
     public override void Exit()
     {
-        base.Exit();
+        //base.Exit();
     }
 
     public override void Update()

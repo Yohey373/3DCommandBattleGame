@@ -14,16 +14,17 @@ public class MainGameStatePlayerWaitTurn : MainGameStatesGameMain
 
     public override void Enter()
     {
-        base.Enter();
+        Debug.Log("MainGameStatePlayerWaitTurn Enter");
     }
 
     public override void Exit()
     {
-        base.Exit();
+        Debug.Log("MainGameStatePlayerWaitTurn Exit");
     }
 
     public override void Update()
     {
+        Debug.Log("MainGameStatePlayerWaitTurn Update");
         base.Update();
         // ‚Ç‚ê‚©ˆê‚Â‚Å‚àƒQ[ƒW‚ªƒtƒ‹‚Å‚ ‚ê‚Î
         if (characterUIRoots.Any(uiRoots => uiRoots.IsGaugeFull))

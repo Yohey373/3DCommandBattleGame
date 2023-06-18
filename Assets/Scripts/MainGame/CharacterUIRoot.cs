@@ -79,8 +79,13 @@ public class CharacterUIRoot : MonoBehaviour
         magicPointText.text =
             $"{characterUIData.MagicPoint}/{characterUIData.GetMaxMagicPoint}";
 
-        waitUISpeed += waitSpeed * Time.deltaTime;
-        waitGauge.fillAmount = waitUISpeed/waitGaugeLimit;
+        // waitのターンだったらゲージを進める
+        if (MainGameStateManager.Instance.GetMainGameState.IsState(MainGameStateManager.Instance.MainGameStatesPlayerWaitTurn))
+        {
+            IsGaugeFull = false;
+            waitUISpeed += waitSpeed * Time.deltaTime;
+            waitGauge.fillAmount = waitUISpeed/waitGaugeLimit;
 
+        }
     }
 }

@@ -35,7 +35,7 @@ public class MainGameStatesGameStart : MainGameState
     {
         Debug.Log("MainGameStatesGameStart Update");
         // ゲームの準備ができたら、次のステートに遷移
-        stateMachine.ChangeState(new MainGameStatesGameMain(stateMachine));
+        stateMachine.ChangeState(MainGameStateManager.Instance.MainGameStatesGameMain);
     }
     
 }

@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Fighter
   HitPoint: 250
   MagicPoint: 50
-  Speed: 18
+  Speed: 50
   PhysicalAttackPower: 20
   MagicAttackPower: 6
   CharacterType: 0

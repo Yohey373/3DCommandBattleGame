@@ -8,16 +8,16 @@ public class MainGameStatesGameResult : MainGameState
 
     public override void Enter()
     {
-        Debug.Log("MiangGameStatesGameResult Enter");
+        Debug.Log("MianGameStatesGameResult Enter");
     }
 
     public override void Exit()
     {
-        Debug.Log("MiangGameStatesGameResult Exit");
+        Debug.Log("MianGameStatesGameResult Exit");
     }
 
     public override void Update()
     {
-        Debug.Log("MiangGameStatesGameResult Update");
+        Debug.Log("MianGameStatesGameResult Update");
     }
 }
