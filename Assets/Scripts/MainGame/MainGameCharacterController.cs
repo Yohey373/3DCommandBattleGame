@@ -17,6 +17,8 @@ public class MainGameCharacterController : MonoBehaviour
 
     public bool IsActionChoiced = false;
 
+    public Transform PointOfAttack;
+
     // メインゲームで使うキャラクターデータ
     private CharacterData gameCharacterData;
 
@@ -45,6 +47,9 @@ public class MainGameCharacterController : MonoBehaviour
     {
         var characterPrefab = Instantiate(gameCharacterData.CharacterPrefab, this.transform);
         gameCharacterAnimator = characterPrefab.GetComponentInChildren<Animator>();
+
+        var CharacterClickHandler = characterPrefab.AddComponent<CharacterClickHandler>();
+
         primaryButtonAction = new MainGameUIButtonsManager.ButtonAction("Attack", ()=>SetAnimation(0));
     }
 
