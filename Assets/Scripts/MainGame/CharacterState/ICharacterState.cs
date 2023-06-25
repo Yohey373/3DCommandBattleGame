@@ -1,12 +1,12 @@
 
 public interface ICharacterState 
 {
-    public void Enter();
+     void Enter();
     
 
-    public void Update();
+     void Update();
    
 
-    public void Exit();
+     void Exit();
     
 }

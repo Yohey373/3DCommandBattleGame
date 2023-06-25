@@ -21,7 +21,6 @@ public class MainGameStatesGameMain : MainGameState
 
     public override void Update()
     {
-        Debug.Log("MainGameStatesGameMain Update");
         if (GameCharacterDataProvider.Instance.PlayerCharacterControllers.All(x=>x.GetCharacterData.HitPoint <= 0))
         {
             // HitPoint‚ª‚È‚­‚È‚Á‚½‚çƒŠƒUƒ‹ƒg‚Ö

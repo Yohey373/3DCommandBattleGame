@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9da185d45f5caed4c9e2c61f708ad0b1, type: 3}
   m_Name: Enemy
   m_EditorClassIdentifier: 
-  Name: 
-  HitPoint: 0
+  Name: Enemy
+  HitPoint: 350
   MagicPoint: 0
-  Speed: 0
-  PhysicalAttackPower: 0
-  MagicAttackPower: 0
+  Speed: 30
+  PhysicalAttackPower: 40
+  MagicAttackPower: 10
   CharacterType: 0
-  CharacterPrefab: {fileID: 0}
+  CharacterPrefab: {fileID: 1783563462218004, guid: 7f931d4b5c97d194d8726ddf5acdd440,
+    type: 3}

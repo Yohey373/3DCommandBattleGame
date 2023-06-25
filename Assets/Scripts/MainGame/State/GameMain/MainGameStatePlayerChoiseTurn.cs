@@ -11,6 +11,7 @@ public class MainGameStatePlayerChoiseTurn : MainGameStatesGameMain
 
     public override void Enter()
     {
+        Debug.Log("‚±‚±‚«‚”‚é");
         base.Enter();
     }
 

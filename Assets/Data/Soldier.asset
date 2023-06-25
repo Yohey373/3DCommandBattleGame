@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Soldier
   HitPoint: 300
   MagicPoint: 10
-  Speed: 14
-  PhysicalAttackPower: 18
-  MagicAttackPower: 10
+  Speed: 40
+  PhysicalAttackPower: 60
+  MagicAttackPower: 30
   CharacterType: 0
   CharacterPrefab: {fileID: 0}

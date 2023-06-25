@@ -24,6 +24,13 @@ public class MainGameStatesGameStart : MainGameState
             GameCharacterDataProvider.Instance.PlayerCharacterControllers[i].CharacterInstantiate();
         }
 
+        // 敵側のキャラクターを産む
+        for (int i = 0; i < GameCharacterDataProvider.Instance.EnemyCharacterControllers.Count(); i++)
+        {
+            // キャラクターを産む
+            GameCharacterDataProvider.Instance.EnemyCharacterControllers[i].CharacterInstantiate();
+        }
+
     }
 
     public override void Exit()

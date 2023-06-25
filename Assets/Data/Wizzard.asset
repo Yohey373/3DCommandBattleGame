@@ -15,8 +15,8 @@ MonoBehaviour:
   Name: Wizzard
   HitPoint: 200
   MagicPoint: 100
-  Speed: 8
-  PhysicalAttackPower: 6
-  MagicAttackPower: 20
+  Speed: 25
+  PhysicalAttackPower: 20
+  MagicAttackPower: 70
   CharacterType: 1
   CharacterPrefab: {fileID: 0}

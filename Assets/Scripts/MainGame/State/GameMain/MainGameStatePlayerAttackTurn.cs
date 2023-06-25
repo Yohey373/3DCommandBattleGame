@@ -11,6 +11,7 @@ public class MainGameStatePlayerAttackTurn : MainGameStatesGameMain
 
     public override void Enter()
     {
+        Debug.Log("#");
         //base.Enter();
     }
 
@@ -21,9 +22,10 @@ public class MainGameStatePlayerAttackTurn : MainGameStatesGameMain
 
     public override void Update()
     {
+        Debug.Log(GameCharacterDataProvider.Instance.PlayerCharacterControllers.FirstOrDefault().IsActionChoiced);
         base.Update();
         // アニメーションが終わったらWaitTurnに移行する
-        if (GameCharacterDataProvider.Instance.PlayerCharacterControllers.All(player => player.IsActionChoiced)) 
+        if (GameCharacterDataProvider.Instance.PlayerCharacterControllers.All(player => !player.IsActionChoiced)) 
         {
             stateMachine.ChangeState(MainGameStateManager.Instance.MainGameStatesPlayerWaitTurn);
         }

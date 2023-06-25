@@ -14,11 +14,11 @@ public class CharacterStateMachine
     public event Action<ICharacterState> stateChanged;
 
     // CharacterStateMachineを作った時のコンストラクタ
-    public CharacterStateMachine(CharacterData characterData)
+    public CharacterStateMachine(MainGameCharacterController mainGameCharacterController)
     {
-        this.waitState = new CharacterWaitState(characterData);
-        this.moveState = new CharacterMoveState(characterData);
-        this.attackState = new CharacterAttackState(characterData);
+        this.waitState = new CharacterWaitState(mainGameCharacterController);
+        this.moveState = new CharacterMoveState(mainGameCharacterController);
+        this.attackState = new CharacterAttackState(mainGameCharacterController);
     }
 
     // CharacterStateがセットされたときに呼ばれる

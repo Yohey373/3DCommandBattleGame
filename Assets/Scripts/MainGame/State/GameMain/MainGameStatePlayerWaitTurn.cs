@@ -31,6 +31,7 @@ public class MainGameStatePlayerWaitTurn : MainGameStatesGameMain
         {
             // もし、ゲージがフルになってら選択するターンに移行する
             stateMachine.ChangeState(MainGameStateManager.Instance.MainGameStatesPlayerChoiseTurn);
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
         }
     }
 }

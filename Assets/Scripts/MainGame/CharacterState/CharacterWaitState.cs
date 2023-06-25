@@ -1,21 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class CharacterWaitState : ICharacterState
 {
 
-    CharacterData characterData;
+    private CharacterData characterData;
 
-    public CharacterWaitState (CharacterData characterData)
+    private MainGameCharacterController mainGameCharacterController;
+
+    public CharacterWaitState (MainGameCharacterController mainGameCharacterController)
     {
-        this.characterData = characterData;
+        this.characterData = mainGameCharacterController.GetCharacterData;
+        this.mainGameCharacterController = mainGameCharacterController;
     }
 
     
     public void Enter()
     {
-
+        this.mainGameCharacterController.GetGameCharacterAnimator.Play("Idle");
     }
 
     public void Update()
